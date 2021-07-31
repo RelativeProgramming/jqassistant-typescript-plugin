@@ -1,7 +1,8 @@
 import * as espree from "espree";
 
 export class Parser {
-    parse(code) {
-        return espree.parse(code);
+    parse(code, ecmaVersion, sourceType) {
+        let options = {ecmaVersion: ecmaVersion, sourceType: sourceType};
+        return espree.parse(code, options);
     }
 }
