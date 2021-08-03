@@ -7,6 +7,7 @@ module.exports = {
         filename: 'ecmascript-parser-bundle.js',
         libraryTarget: 'module'
     },
+    mode: "production",
     experiments: {
         outputModule: true
     }
