@@ -1,4 +1,4 @@
-package org.jqassistant.contrib.plugin.ecmascript.impl.graaljs;
+package org.jqassistant.contrib.plugin.typescript.impl.graaljs;
 
 import org.graalvm.polyglot.io.FileSystem;
 

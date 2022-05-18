@@ -1,4 +1,4 @@
-package org.jqassistant.contrib.plugin.ecmascript.impl;
+package org.jqassistant.contrib.plugin.typescript.impl;
 
 import com.buschmais.jqassistant.core.scanner.api.Scanner;
 import com.buschmais.jqassistant.core.scanner.api.ScannerPlugin.Requires;
@@ -8,16 +8,16 @@ import com.buschmais.jqassistant.plugin.common.api.scanner.AbstractScannerPlugin
 import com.buschmais.jqassistant.plugin.common.api.scanner.filesystem.FileResource;
 import com.google.common.base.Charsets;
 import org.apache.commons.io.IOUtils;
-import org.jqassistant.contrib.plugin.ecmascript.api.model.ECMAScriptFileDescriptor;
-import org.jqassistant.contrib.plugin.ecmascript.impl.graaljs.ECMAScriptParser;
+import org.jqassistant.contrib.plugin.typescript.api.model.TypeScriptFileDescriptor;
+import org.jqassistant.contrib.plugin.typescript.impl.graaljs.TypeScriptParser;
 
 import java.io.IOException;
 import java.io.InputStream;
 
 @Requires(FileDescriptor.class)
-public class ECMAScriptScannerPlugin extends AbstractScannerPlugin<FileResource, ECMAScriptFileDescriptor> {
+public class TypeScriptScannerPlugin extends AbstractScannerPlugin<FileResource, TypeScriptFileDescriptor> {
 
-    private final ECMAScriptParser ecmaScriptParser = new ECMAScriptParser();
+    private final TypeScriptParser typeScriptParser = new TypeScriptParser();
 
     @Override
     public boolean accepts(FileResource fileResource, String path, Scope scope) throws IOException {
@@ -25,16 +25,16 @@ public class ECMAScriptScannerPlugin extends AbstractScannerPlugin<FileResource,
     }
 
     @Override
-    public ECMAScriptFileDescriptor scan(FileResource fileResource, String path, Scope scope, Scanner scanner)
+    public TypeScriptFileDescriptor scan(FileResource fileResource, String path, Scope scope, Scanner scanner)
         throws IOException {
         FileDescriptor fileDescriptor = scanner.getContext()
             .getCurrentDescriptor();
         try (InputStream inputStream = fileResource.createStream()) {
             String source = IOUtils.toString(inputStream, Charsets.UTF_8);
-            ecmaScriptParser.parse(source);
+            typeScriptParser.parse(source, fileResource.getFile().getAbsolutePath());
         }
         return scanner.getContext()
             .getStore()
-            .addDescriptorType(fileDescriptor, ECMAScriptFileDescriptor.class);
+            .addDescriptorType(fileDescriptor, TypeScriptFileDescriptor.class);
     }
 }

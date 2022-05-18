@@ -10,12 +10,12 @@
     </parent>
 
     <groupId>org.jqassistant.contrib.plugin</groupId>
-    <artifactId>jqassistant-ecmascript-plugin</artifactId>
+    <artifactId>jqassistant-typescript-plugin</artifactId>
     <version>1.10.0-SNAPSHOT</version>
 
-    <name>jQAssistant ECMAScript Plugin</name>
-    <description>The jQAssistant plugin for ECMAScript.</description>
-    <url>https://github.com/jqassistant-contrib/jqassistant-ecmascript-plugin</url>
+    <name>jQAssistant TypeScript Plugin</name>
+    <description>The jQAssistant plugin for TypeScript.</description>
+    <url>https://github.com/RelativeProgramming/jqassistant-typescript-plugin</url>
 
     <licenses>
         <license>
@@ -30,15 +30,20 @@
             <name>Dirk Mahler</name>
             <email>dirk.mahler@buschmais.com</email>
         </developer>
+        <developer>
+            <id>sebastian-wendorf</id>
+            <name>Sebastian Wendorf</name>
+            <email>sebastian.wendorf@buschmais.com</email>
+        </developer>
     </developers>
 
-    <scm>
+    <!-- <scm>
         <connection>scm:git:git@github.com:jqassistant-contrib/jqassistant-ecmascript-plugin.git</connection>
         <developerConnection>scm:git:git@github.com:jqassistant-contrib/jqassistant-ecmascript-plugin.git
         </developerConnection>
         <url>https://github.com/jqassistant-contrib/jqassistant-ecmascript-plugin</url>
         <tag>HEAD</tag>
-    </scm>
+    </scm> -->
 
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
