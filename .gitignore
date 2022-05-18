@@ -5,6 +5,7 @@ target
 .project
 .classpath
 .idea
+.vscode
 /scm/neo4jserver/neo4j-home/
 *~
 *.iml
@@ -13,3 +14,4 @@ target
 *.userlibraries
 node
 node_modules
+build
